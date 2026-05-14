@@ -1,0 +1,101 @@
+# ===== GIT CONFIG =====
+
+git config --global user.name "Your Name"
+git config --global user.email "your-email@example.com"
+git config --list
+
+
+# ===== CREATE & PUSH REPO =====
+
+mkdir myproject
+cd myproject
+
+git init
+
+git add .
+git commit -m "Initial commit"
+
+git remote add origin https://github.com/username/repository.git
+
+git branch -M main
+
+git push -u origin main
+
+
+# ===== CLONE & PUSH =====
+
+git clone https://github.com/username/repository.git
+
+cd repository
+
+git status
+
+git add .
+git commit -m "Updated files"
+
+git push origin main
+
+
+# ===== BRANCH & PR =====
+
+git checkout -b feature-branch
+
+git add .
+git commit -m "Added feature"
+
+git push origin feature-branch
+
+# GitHub:
+# Compare & pull request
+
+
+# ===== MERGE CONFLICT =====
+
+git checkout main
+
+git pull origin main
+
+git merge feature-branch
+
+# Fix conflicts manually
+# Remove:
+# <<<<<<<
+# =======
+# >>>>>>>
+
+git add .
+
+git commit -m "Resolved conflict"
+
+git push origin main
+
+
+# ===== FORK WORKFLOW =====
+
+# Fork repo on GitHub
+
+git clone https://github.com/your-username/repository.git
+
+cd repository
+
+git checkout -b my-changes
+
+git add .
+git commit -m "Made changes"
+
+git push origin my-changes
+
+# GitHub:
+# Compare & pull request
+
+
+# ===== EXTRA COMMANDS =====
+
+git status
+git log
+git branch
+git checkout branch-name
+git pull origin main
+git branch -d branch-name
+git push origin --delete branch-name
+git remote -v
